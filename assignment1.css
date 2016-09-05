@@ -1,0 +1,85 @@
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+html {
+	box-sizing: border-box;
+}
+
+body {
+	background:url(images/pavlova-detail.jpg);
+	background-repeat: no-repeat;
+	background-size:cover;
+	background-position: center center;
+	background-attachment: fixed;
+	margin: 0; /* required to keep list at top of page */	
+}
+
+.container div {
+	border-style: none;
+}
+
+nav[role="banner"] {
+	padding-top: 15px;
+	padding-bottom: 5px;
+	width: 100%;
+	background: rgba(255, 204, 255, 0.8);
+
+}
+
+nav[role="banner"] img {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+	padding-bottom: 15px;
+}
+
+nav[role="banner"] ul {
+	display: flex;
+	justify-content: space-around;
+	list-style-type: none;
+	margin: 0px;
+	-webkit-padding-start: 0px;
+}
+
+nav[role="banner"] li a {
+	font-family: Helvetica, sans-serif;
+	font-weight: bold;
+	color: #FFFFFF;
+	/*background-color: #FFCCFF;*/
+	text-decoration:none;
+	-o-transition:.5s;
+	-ms-transition:.5s;
+	-moz-transition:.5s;
+	-webkit-transition:.5s;
+	transition:.5s;
+}
+
+nav[role="banner"] li a:hover {
+	color: #CCAADD;
+	/*background-color: #FFBBFF;
+	background: rgba(255, 187, 255, 0.9);*/
+}
+
+main{
+	background: rgba(250, 238, 255, 0.9);
+	text-align:center;
+	color: #FFFFFF;
+	margin:20px;
+}
+
+footer {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	align-items: center;
+	justify-content: center;
+	position: fixed;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	background: rgba(204, 255, 204, 1);
+	color: #D1D0CE;
+	padding: 7px;
+}
+
