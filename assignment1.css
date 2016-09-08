@@ -150,10 +150,15 @@ p.tip {
 	font-size: 95%;
 }
 
-p.author { /*put comment avatars and user names inline*/
+.rating { /*put comment avatars and user names inline*/
 	display: flex;
 	align-items: center;
+}
 
+.rating > span {
+	display: inline-block;
+	position: relative;
+	padding: 3px;
 }
 
 article {
@@ -184,7 +189,11 @@ aside[id="comments"] {
 	/*margin-bottom:10px;*/
 }
 
-.comment {
+form { /*space after submit button*/
+	margin-bottom:10px;
+}
+
+.comment { /*div for indidual comment post*/
     padding: 3px;
     border: 1px solid #e5e5e5;
     background: #fff;
@@ -202,6 +211,10 @@ ul {
 	padding-left:0;
 }
 
+li{
+	padding-bottom:5px;
+}
+
 li > h4{
 	margin:10px;
 }
@@ -209,10 +222,6 @@ li > h4{
 li>a:after {
 	content:"\a"; /*insert line break after closing a link tag*/
     white-space: pre; /*preserve the white space and prevent the line from wrapping*/
-}
-
-li{
-	padding-bottom:5px;
 }
 
 footer {
