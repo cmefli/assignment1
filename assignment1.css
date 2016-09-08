@@ -1,9 +1,12 @@
+@import url('https://fonts.googleapis.com/css?family=Raleway|Roboto');
+
 *, *:before, *:after {
   box-sizing: inherit;
 }
 
 html {
 	box-sizing: border-box;
+	font-family: 'Raleway', sans-serif;
 }
 
 body {
@@ -44,7 +47,6 @@ nav[role="banner"] ul {
 }
 
 nav[role="banner"] li a {
-	font-family: Helvetica, sans-serif;
 	font-weight: bold;
 	color: #6C7F75;
 	/*background-color: #FFCCFF;*/
@@ -65,7 +67,6 @@ nav[role="banner"] li a:hover {
 main {
 	background: rgba(250, 238, 255, 0.9);
 	text-align:center;
-	font-family: Helvetica, sans-serif;
 	color: #796C7F;
 	height:100%;
 	min-height:100%;
@@ -83,8 +84,6 @@ aside[role="images"] {
 	flex-wrap: wrap;
 	align-items: center;
 	justify-content: space-around;
-
-
 }
 
 aside[role="images"] img{
@@ -125,7 +124,19 @@ table td {
 ol {
 	line-height: 150%;
 	text-align:left;
-	margin-top:5px;	
+	margin-top:7px;	
+	list-style-position: inside;
+	counter-reset: item; /*used to make numbers on ordered list bold*/
+}
+
+ol li { 
+display: block /*removes numbers from ordered list*/
+}
+
+ol > li:before { /*creates numbers in bold before all list items that are children of an ordered list*/
+	content: counter(item) ". ";
+    counter-increment: item;
+    font-weight: bold;
 }
 
 p.big {
@@ -136,11 +147,19 @@ p.big {
 
 p.tip {
 	font-style: italic;
+	font-size: 95%;
+}
+
+p.author { /*put comment avatars and user names inline*/
+	display: flex;
+	align-items: center;
+
 }
 
 article {
 	padding-left:20px;
 	padding-right:20px;
+	padding-bottom:20px;
 }
 
 article img[alt="Anna Pavlova"] {
@@ -159,11 +178,41 @@ article img {
 	border-style: solid;
 	border-width: 4px;
 	border-color: #FFFFFF;
+}
+
+aside[id="comments"] {
+	/*margin-bottom:10px;*/
+}
+
+.comment {
+    padding: 3px;
+    border: 1px solid #e5e5e5;
+    background: #fff;
+	box-shadow: 0 1px 1px rgba(0,0,0,0.2), inset 0 1px 1px rgba(0,0,0,0.1);
 	margin-bottom:10px;
 }
 
-form[name="comments"] {
-	margin-bottom:10px
+textarea {
+	font-family: inherit;
+	margin-top: 5px;
+}
+
+ul {
+	list-style:none;
+	padding-left:0;
+}
+
+li > h4{
+	margin:10px;
+}
+
+li>a:after {
+	content:"\a"; /*insert line break after closing a link tag*/
+    white-space: pre; /*preserve the white space and prevent the line from wrapping*/
+}
+
+li{
+	padding-bottom:5px;
 }
 
 footer {
