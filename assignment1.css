@@ -78,7 +78,7 @@ h2 {
 	padding-top:10px;
 }
 
-aside[role="images"] {
+aside[id="images"] {
 	display: flex;
 	flex-direction: row;
 	flex-wrap: wrap;
@@ -86,7 +86,7 @@ aside[role="images"] {
 	justify-content: space-around;
 }
 
-aside[role="images"] img{
+aside[id="images"] img {
 	height: auto;
 	width: 30%;
 	overflow: hidden; 
@@ -94,7 +94,6 @@ aside[role="images"] img{
 	border-width: 4px;
 	border-color: #FFFFFF;
 	margin:5px;
-
 }
 
 table {
@@ -152,9 +151,13 @@ p.tip {
 
 .rating { /*put comment avatars and user names inline*/
 	display: flex;
-	align-items: center;
+	align-items: center;\
 }
 
+.rating img {
+	padding-top:5px;
+	padding-right:5px;
+}
 .rating > span {
 	display: inline-block;
 	position: relative;
@@ -177,6 +180,7 @@ article img[alt="Anna Pavlova"] {
 	margin-right:20px;
 	margin-bottom:10px;
 }
+
 article img {
 	height: auto;
 	max-width:100%;
@@ -184,6 +188,30 @@ article img {
 	border-width: 4px;
 	border-color: #FFFFFF;
 }
+
+article[id="news"] h2 {
+	border-bottom: solid;
+	border-width: 2px;
+	text-align:left;
+}
+
+aside[id="news_article"] {
+	display:flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	align-items: top;
+	justify-content: left;
+	padding:2px;
+	
+}
+
+aside[id="news_article"] img {
+	margin:5px;
+	max-width:500px;
+	width:auto;
+	height:auto;
+}
+
 
 aside[id="comments"] {
 	/*margin-bottom:10px;*/
@@ -194,12 +222,16 @@ form { /*space after submit button*/
 }
 
 .comment { /*div for indidual comment post*/
-    padding: 3px;
-    border: 1px solid #e5e5e5;
+    padding-left: 13px;
+	padding-right: 13px;
+	padding-bottom: 13px;
+	border: 1px solid #e5e5e5;
     background: #fff;
 	box-shadow: 0 1px 1px rgba(0,0,0,0.2), inset 0 1px 1px rgba(0,0,0,0.1);
 	margin-bottom:10px;
 }
+
+
 
 textarea {
 	font-family: inherit;
@@ -219,7 +251,7 @@ li > h4{
 	margin:10px;
 }
 
-li>a:after {
+li > a:after {
 	content:"\a"; /*insert line break after closing a link tag*/
     white-space: pre; /*preserve the white space and prevent the line from wrapping*/
 }
