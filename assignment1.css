@@ -1,18 +1,22 @@
+@import url('https://fonts.googleapis.com/css?family=Raleway|Roboto');
+
 *, *:before, *:after {
   box-sizing: inherit;
 }
 
 html {
 	box-sizing: border-box;
+	font-family: 'Raleway', sans-serif;
 }
 
 body {
-	background:url(images/pavlova-detail.jpg);
+	background:url(images/pavlova-whole-1000.jpg);
 	background-repeat: no-repeat;
 	background-size:cover;
 	background-position: center center;
 	background-attachment: fixed;
-	margin: 0; /* required to keep list at top of page */	
+	margin: 0; /* required to keep list at top of page */
+
 }
 
 .container div {
@@ -23,7 +27,7 @@ nav[role="banner"] {
 	padding-top: 15px;
 	padding-bottom: 5px;
 	width: 100%;
-	background: rgba(255, 204, 255, 0.8);
+	background: rgba(204, 255, 204, 0.9);
 
 }
 
@@ -43,9 +47,8 @@ nav[role="banner"] ul {
 }
 
 nav[role="banner"] li a {
-	font-family: Helvetica, sans-serif;
 	font-weight: bold;
-	color: #FFFFFF;
+	color: #6C7F75;
 	/*background-color: #FFCCFF;*/
 	text-decoration:none;
 	-o-transition:.5s;
@@ -56,16 +59,201 @@ nav[role="banner"] li a {
 }
 
 nav[role="banner"] li a:hover {
-	color: #CCAADD;
+	color: #EE40FF;
 	/*background-color: #FFBBFF;
 	background: rgba(255, 187, 255, 0.9);*/
 }
 
-main{
+main {
 	background: rgba(250, 238, 255, 0.9);
 	text-align:center;
-	color: #FFFFFF;
+	color: #796C7F;
+	height:100%;
+	min-height:100%;
 	margin:20px;
+	margin-bottom: 70px; /* needed for the footer */
+}
+
+h2 {
+	padding-top:10px;
+}
+
+aside[id="images"] {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	align-items: center;
+	justify-content: space-around;
+}
+
+aside[id="images"] img {
+	height: auto;
+	width: 30%;
+	overflow: hidden; 
+	border-style: solid;
+	border-width: 4px;
+	border-color: #FFFFFF;
+	margin:5px;
+}
+
+table {
+	width: 30%;
+	font-weight: bold;
+	float:left;
+	background: rgba(204, 255, 204, 0.9);
+	border: 5px solid #6C7F75;
+	margin-left:20px;
+	margin-right:20px;
+	margin-top:10px;
+	margin-bottom:10px;
+}
+
+table th {
+	color: #EE40FF;
+	border-bottom: 2px solid #6C7F75;
+	line-height: 125%;
+}
+
+table td {
+	color: #796C7F;
+	padding-left:5px;
+	padding-right:5px;
+}
+
+ol {
+	line-height: 150%;
+	text-align:left;
+	margin-top:7px;	
+	list-style-position: inside;
+	counter-reset: item; /*used to make numbers on ordered list bold*/
+}
+
+ol li { 
+display: block /*removes numbers from ordered list*/
+}
+
+ol > li:before { /*creates numbers in bold before all list items that are children of an ordered list*/
+	content: counter(item) ". ";
+    counter-increment: item;
+    font-weight: bold;
+}
+
+p.big {
+	line-height: 200%;
+	text-align:left;
+	margin-top:7px;
+}
+
+p.tip {
+	font-style: italic;
+	font-size: 95%;
+}
+
+.rating { /*put comment avatars and user names inline*/
+	display: flex;
+	align-items: center;\
+}
+
+.rating img {
+	padding-top:5px;
+	padding-right:5px;
+}
+.rating > span {
+	display: inline-block;
+	position: relative;
+	padding: 3px;
+}
+
+article {
+	padding-left:20px;
+	padding-right:20px;
+	padding-bottom:20px;
+}
+
+article img[alt="Anna Pavlova"] {
+	height: auto;
+	max-width:100%;
+	border-style: solid;
+	border-width: 4px;
+	border-color: #FFFFFF;
+	float:left;
+	margin-right:20px;
+	margin-bottom:10px;
+}
+
+article img {
+	height: auto;
+	max-width:100%;
+	border-style: solid;
+	border-width: 4px;
+	border-color: #FFFFFF;
+}
+
+article[id="news"] h2 {
+	border-bottom: solid;
+	border-width: 2px;
+	text-align:left;
+}
+
+aside[id="news_article"] {
+	display:flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	align-items: top;
+	justify-content: left;
+	padding:2px;
+	
+}
+
+aside[id="news_article"] img {
+	margin:5px;
+	max-width:500px;
+	width:auto;
+	height:auto;
+}
+
+
+aside[id="comments"] {
+	/*margin-bottom:10px;*/
+}
+
+form { /*space after submit button*/
+	margin-bottom:10px;
+}
+
+.comment { /*div for indidual comment post*/
+    padding-left: 13px;
+	padding-right: 13px;
+	padding-bottom: 13px;
+	border: 1px solid #e5e5e5;
+    background: #fff;
+	box-shadow: 0 1px 1px rgba(0,0,0,0.2), inset 0 1px 1px rgba(0,0,0,0.1);
+	margin-bottom:10px;
+}
+
+
+
+textarea {
+	font-family: inherit;
+	margin-top: 5px;
+}
+
+ul {
+	list-style:none;
+	padding-left:0;
+}
+
+li{
+	padding-bottom:5px;
+}
+
+li > h4{
+	margin:10px;
+}
+
+li > a:after {
+	content:"\a"; /*insert line break after closing a link tag*/
+    white-space: pre; /*preserve the white space and prevent the line from wrapping*/
 }
 
 footer {
@@ -78,7 +266,7 @@ footer {
 	right: 0;
 	bottom: 0;
 	left: 0;
-	background: rgba(204, 255, 204, 1);
+	background: rgba(204, 255, 204, 0.9);
 	color: #D1D0CE;
 	padding: 7px;
 }
